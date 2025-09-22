@@ -29,15 +29,25 @@ export function DrawerUser(){
                     <DrawerTitle>Are you absolutely sure?</DrawerTitle>
                     <DrawerDescription>This action cannot be undone.</DrawerDescription>
                 </DrawerHeader>
-            <DrawerFooter>
-            <div className="flex flex-col w-100">
+            <DrawerFooter className="md:hidden">
+            
             <Button>Test</Button>
             <Button>Log in</Button>
                 <Button>Log Out</Button>
                 <DrawerClose asChild>
                 <Button>Cancel</Button>
                 </DrawerClose>
-            </div>
+           
+            </DrawerFooter>
+            <DrawerFooter className="hidden md:flex justify-center items-center flex-col w-full">             
+           <Button >Test</Button>
+            <Button>Log in</Button>
+                <Button>Log Out</Button>
+                <DrawerClose asChild>
+                <Button>Cancel</Button>
+                </DrawerClose>
+       
+           
             </DrawerFooter>
             </DrawerContent>
         </Drawer>
