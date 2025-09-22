@@ -13,7 +13,8 @@ export const QRScanner = () => {
     },
   });
   
-  console.log(result.trim())
+  const data = result.trim()
+  console.log(`This is the json: ${data}, and this is the type: ${typeof data}`)
 
   return (
     <>
