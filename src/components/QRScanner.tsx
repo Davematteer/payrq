@@ -14,10 +14,7 @@ export const QRScanner = () => {
     <div className="flex justify-center items-center p-6 m-2">
       <video ref={ref} /> 
     </div>
-     <p>
-     <span>Last result:</span>
-     <span>{result}</span>
-   </p>
+     
     </>
   );
 };

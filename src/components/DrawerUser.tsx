@@ -30,10 +30,14 @@ export function DrawerUser(){
                     <DrawerDescription>This action cannot be undone.</DrawerDescription>
                 </DrawerHeader>
             <DrawerFooter>
-                <Button>Submit</Button>
-                <DrawerClose>
+            <div className="flex flex-col w-100">
+            <Button>Test</Button>
+            <Button>Log in</Button>
+                <Button>Log Out</Button>
+                <DrawerClose asChild>
                 <Button>Cancel</Button>
                 </DrawerClose>
+            </div>
             </DrawerFooter>
             </DrawerContent>
         </Drawer>
