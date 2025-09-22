@@ -4,19 +4,19 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useState } from "react";
 import { DrawerUser } from "@/components/DrawerUser";
 import { DrawerHistory } from "@/components/DrawerHistory";
+import { QRScanner } from "@/components/QRScanner";
 
 export default function Home() {
-  const [userOpen, setUserOpen] = useState(false);
-  const [scanOpen, setScanOpen] = useState(false);
-  const [historyOpen, setHistoryOpen] = useState(false);
-  
+  const [scannerOpen, setScannerOpen] = useState(false);
+
   
   return (
     <main className="min-h-screen ">
+      {scannerOpen && <QRScanner />}
       <footer className="fixed bottom-0  w-full">
       <div className="flex flex-row justify-between md:justify-center md:gap-60 p-5 mx-4">
         <DrawerUser />       
-        <ScanQrCode/>  
+        <ScanQrCode onClick={() => setScannerOpen(prevState => !prevState)}/>  
         <DrawerHistory />
       </div>
       </footer>
