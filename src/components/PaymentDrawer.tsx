@@ -26,7 +26,7 @@ export function PaymentDrawer({isOpen, setOpen}:{isOpen:boolean, setOpen: (v:boo
                 </DrawerHeader>
             <DrawerFooter>
                 <Button>Submit</Button>
-                <DrawerClose>
+                <DrawerClose asChild>
                 <Button>Cancel</Button>
                 </DrawerClose>
             </DrawerFooter>

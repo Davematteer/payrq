@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useZxing } from "react-zxing";
 import { PaymentDrawer } from "./PaymentDrawer";
 
-export const QRScanner = () => {
+export const QRScanner = async () => {
   const [result, setResult] = useState("");
   const [isOpen, setOpen] = useState(false);
 
@@ -12,6 +12,8 @@ export const QRScanner = () => {
       setOpen(true)
     },
   });
+  
+  console.log(result.trim())
 
   return (
     <>
@@ -20,8 +22,9 @@ export const QRScanner = () => {
     </div>
     <p>
       {result}
+      
     </p>
-    {JSON.parse(result).metaData  && <PaymentDrawer isOpen={isOpen} setOpen={setOpen}/>}
+    {result && <PaymentDrawer isOpen={isOpen} setOpen={setOpen}/>}
     </>
   );
 };
