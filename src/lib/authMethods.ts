@@ -45,10 +45,29 @@ export async function SignUp(email:string, password:string, name:string, image?:
 });
 }
 
-export async function SignOut(){
-    await authClient.signOut();
+export async function SignOut(router:ReturnType<typeof import("next/navigation").useRouter>){
+
+    await authClient.signOut({
+        fetchOptions: {
+        onSuccess: () => {
+            router.push("/")
+        },
+    },
+  });
 }
 
 export function UserSession(){
-    return authClient.useSession()
-} 
+
+    const { 
+        data: session, 
+        isPending, //loading state
+        error, //error object
+        refetch //refetch the session
+    } = authClient.useSession() 
+
+    if (!session) return
+
+    return session
+
+    
+}
