@@ -4,6 +4,8 @@ import { PaymentDrawer } from "./PaymentDrawer";
 
 export const QRScanner = () => {
   const [result, setResult] = useState("");
+  const [isOpen, setOpen] = useState(false);
+
   const { ref } = useZxing({
     onResult(result) {
       setResult(result.getText());
@@ -18,7 +20,7 @@ export const QRScanner = () => {
     <p>
       {result}
     </p>
-    {result && PaymentDrawer}
+    {result && <PaymentDrawer isOpen={isOpen} setOpen={() => setOpen(true)}/>}
     </>
   );
 };

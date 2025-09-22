@@ -14,12 +14,11 @@ import { Button } from "./ui/button";
 
 
 
-export function PaymentDrawer(){
-    //const [isOpen, setOpen] = useState(false);
+export function PaymentDrawer({isOpen, setOpen}:{isOpen:boolean, setOpen: () => void}){
     
     return (
         <>
-        <Drawer >
+        <Drawer open={isOpen} onOpenChange={setOpen} >
             <DrawerContent>
                 <DrawerHeader>
                     <DrawerTitle>Are you absolutely sure?</DrawerTitle>
