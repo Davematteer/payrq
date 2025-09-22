@@ -21,7 +21,7 @@ export const QRScanner = () => {
     <p>
       {result}
     </p>
-    {result && <PaymentDrawer isOpen={isOpen} setOpen={setOpen}/>}
+    {JSON.parse(result).metaData  && <PaymentDrawer isOpen={isOpen} setOpen={setOpen}/>}
     </>
   );
 };
