@@ -11,16 +11,20 @@ import {
 import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
+import { User } from "lucide-react";
+import { SignOut, UserSession } from "@/lib/authMethods";
+import Link from "next/link";
   
 
 export function DrawerUser(){
     const [isOpen, setOpen] = useState(false);
-    
+    const user =  UserSession()
+
     return (
         <>
         <Avatar onClick={() => setOpen(true)}>
-          <AvatarImage src="https://github.com/shadcn.png"  />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarImage src={user.data?.user.image ?? undefined} />
+          <AvatarFallback><User /></AvatarFallback>
         </Avatar> 
 
         <Drawer open={isOpen} onOpenChange={setOpen}>
@@ -29,20 +33,34 @@ export function DrawerUser(){
                     <DrawerTitle>Are you absolutely sure?</DrawerTitle>
                     <DrawerDescription>This action cannot be undone.</DrawerDescription>
                 </DrawerHeader>
-            <DrawerFooter className="md:hidden">
             
-            <Button>Test</Button>
-            <Button>Log in</Button>
-                <Button>Log Out</Button>
+            
+            {!user && <>
+                <DrawerFooter className="md:hidden">
+                <Link href="/auth/login">
+                <Button>Log in</Button>
+            </Link>
+            <Link href="/auth/signup">
+                <Button>Sign Up</Button>
+            </Link>
+            </DrawerFooter>
+            
+            </>}
+            <DrawerFooter className="md:hidden">
+                <Button onClick={() => SignOut()}>Log Out</Button>
                 <DrawerClose asChild>
                 <Button>Cancel</Button>
                 </DrawerClose>
            
             </DrawerFooter>
             <DrawerFooter className="hidden md:flex justify-center items-center flex-col w-full">             
-           <Button >Test</Button>
-            <Button>Log in</Button>
-                <Button>Log Out</Button>
+
+            {
+               <>
+                <Button>Log in</Button>
+                <Button>Sign Up</Button>
+               </>
+            }
                 <DrawerClose asChild>
                 <Button>Cancel</Button>
                 </DrawerClose>
