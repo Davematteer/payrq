@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useZxing } from "react-zxing";
 import { PaymentDrawer } from "./PaymentDrawer";
 
-export const QRScanner = async () => {
+export const QRScanner = () => {
   const [result, setResult] = useState("");
   const [isOpen, setOpen] = useState(false);
 
