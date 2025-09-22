@@ -14,7 +14,7 @@ import { Button } from "./ui/button";
 
 
 
-export function PaymentDrawer({isOpen, setOpen}:{isOpen:boolean, setOpen: () => void}){
+export function PaymentDrawer({isOpen, setOpen}:{isOpen:boolean, setOpen: (v:boolean) => void}){
     
     return (
         <>
