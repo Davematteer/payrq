@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-orange-100">
+    <main className="min-h-screen ">
       <footer className="fixed bottom-0  w-full">
       <div className="flex flex-row justify-between md:justify-center md:gap-60 p-5 ">
         <Avatar>
@@ -13,7 +13,6 @@ export default function Home() {
         </Avatar>        
         <ScanQrCode size={30}/>  
         <History size={30}/>
-
       </div>
       </footer>
     </main>

@@ -119,3 +119,6 @@
   }
 }
 
+html, body {
+  @apply min-h-screen bg-gradient-to-br from-[#fbf9f7] to-[#f3f0ee] overflow-x-hidden ;
+}
