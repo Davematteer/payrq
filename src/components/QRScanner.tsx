@@ -9,6 +9,7 @@ export const QRScanner = () => {
   const { ref } = useZxing({
     onResult(result) {
       setResult(result.getText());
+      setOpen(true)
     },
   });
 
@@ -20,7 +21,7 @@ export const QRScanner = () => {
     <p>
       {result}
     </p>
-    {result && <PaymentDrawer isOpen={isOpen} setOpen={() => setOpen(true)}/>}
+    {result && <PaymentDrawer isOpen={isOpen} setOpen={setOpen}/>}
     </>
   );
 };
