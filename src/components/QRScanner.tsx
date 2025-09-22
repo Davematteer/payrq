@@ -15,7 +15,9 @@ export const QRScanner = () => {
     <div className="flex justify-center items-center p-6 m-2">
       <video ref={ref} className="rounded-3xl"/> 
     </div>
-
+    <p>
+      {result}
+    </p>
     {result && PaymentDrawer}
     </>
   );
