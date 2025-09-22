@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useZxing } from "react-zxing";
+import { PaymentDrawer } from "./PaymentDrawer";
 
 export const QRScanner = () => {
   const [result, setResult] = useState("");
@@ -14,6 +15,8 @@ export const QRScanner = () => {
     <div className="flex justify-center items-center p-6 m-2">
       <video ref={ref} className="rounded-3xl"/> 
     </div>
+
+    {result && PaymentDrawer}
     </>
   );
 };
