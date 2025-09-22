@@ -11,8 +11,8 @@ export default function Home() {
           <AvatarImage src="https://github.com/shadcn.png"  />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>        
-        <ScanQrCode size={30}/>  
-        <History size={30}/>
+        <ScanQrCode/>  
+        <History />
       </div>
       </footer>
     </main>
