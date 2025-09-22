@@ -6,13 +6,13 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-orange-100">
       <footer className="fixed bottom-0  w-full">
-      <div className="flex flex-row justify-between md:justify-center md:gap-60 p-10 ">
+      <div className="flex flex-row justify-between md:justify-center md:gap-60 p-5 ">
         <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarImage src="https://github.com/shadcn.png"  />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>        
-        <ScanQrCode />  
-        <History />
+        <ScanQrCode size={30}/>  
+        <History size={30}/>
 
       </div>
       </footer>
