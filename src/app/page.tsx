@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="min-h-screen ">
       <footer className="fixed bottom-0  w-full">
-      <div className="flex flex-row justify-between md:justify-center md:gap-60 p-5 ">
+      <div className="flex flex-row justify-between md:justify-center md:gap-60 p-5 mx-4">
         <DrawerUser />       
         <ScanQrCode/>  
         <DrawerHistory />
