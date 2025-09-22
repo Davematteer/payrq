@@ -2,6 +2,11 @@ import { useState } from "react";
 import { useZxing } from "react-zxing";
 import { PaymentDrawer } from "./PaymentDrawer";
 
+interface encode{
+  metaData: string,
+  item: {name:string, price:number}[];
+}
+
 export const QRScanner = () => {
   const [result, setResult] = useState("");
   const [isOpen, setOpen] = useState(false);
@@ -12,9 +17,14 @@ export const QRScanner = () => {
       setOpen(true)
     },
   });
-  
-  const data = result.trim()
-  console.log(`This is the json: ${data}, and this is the type: ${typeof data}`)
+  let data = {};
+  if (result !== "") {
+    try {
+      data = JSON.parse(result);
+    } catch (e) {
+      console.error("Invalid JSON from QR code:", e);
+    }
+  }
 
   return (
     <>
@@ -25,7 +35,7 @@ export const QRScanner = () => {
       {result}
       
     </p>
-    {result && <PaymentDrawer isOpen={isOpen} setOpen={setOpen}/>}
+    {(data as encode).metaData && <PaymentDrawer isOpen={isOpen} setOpen={setOpen}/>}
     </>
   );
 };
