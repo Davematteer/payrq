@@ -14,7 +14,7 @@ export default function Home() {
     <main className="min-h-screen ">
       {scannerOpen && <QRScanner />}
       <footer className="fixed bottom-0  w-full">
-      <div className="flex flex-row justify-between md:justify-center md:gap-60 p-5 mx-4">
+      <div className="flex flex-row justify-between md:justify-center md:gap-60 p-5 mx-4 bg-white">
         <DrawerUser />       
         <ScanQrCode onClick={() => setScannerOpen(prevState => !prevState)}/>  
         <DrawerHistory />
