@@ -12,14 +12,14 @@ import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import { History } from "lucide-react"
-
+import { ShoppingCart } from 'lucide-react';
 
 export function DrawerHistory(){
     const [isOpen, setOpen] = useState(false);
     
     return (
         <>
-        <History onClick={() => setOpen(true)} />
+        <ShoppingCart onClick={() => setOpen(true)} />
 
         <Drawer open={isOpen} onOpenChange={setOpen}>
             <DrawerContent>
@@ -29,7 +29,7 @@ export function DrawerHistory(){
                 </DrawerHeader>
             <DrawerFooter>
                 <Button>Submit</Button>
-                <DrawerClose>
+                <DrawerClose asChild>
                 <Button>Cancel</Button>
                 </DrawerClose>
             </DrawerFooter>
