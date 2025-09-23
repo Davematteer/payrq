@@ -31,11 +31,11 @@ export function DrawerUser() {
       <Drawer open={isOpen} onOpenChange={setOpen}>
         <DrawerContent>
           <DrawerHeader>
-            <DrawerTitle>Welcome{` ${user?.user.name}`}! <span className="inline-block align-middle flex justify-end "> {user?.user.name ? (
+            <DrawerTitle className="flex justify-center items-center gap-2 text-2xl font-light"><span > {user?.user.name ? (
   <Avatar onClick={() => setOpen(true)}>
     <AvatarImage src={user?.user.image ?? undefined} />
   </Avatar>
-) : ""}</span></DrawerTitle>
+) : ""}</span>Welcome{` ${user?.user.name ? user.user.name : ""}`} </DrawerTitle>
           
 
             <DrawerDescription>{user ? `Here's your account ${user.user.name}`: "Login to see account details"}</DrawerDescription>

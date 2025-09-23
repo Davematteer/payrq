@@ -24,11 +24,11 @@ export function DrawerHistory(){
         <Drawer open={isOpen} onOpenChange={setOpen}>
             <DrawerContent>
                 <DrawerHeader>
-                    <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                    <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                    <DrawerTitle><p className="font-light text-2xl">Receipt History</p></DrawerTitle>
+                    <DrawerDescription>Here's your past transaction receipts.</DrawerDescription>
                 </DrawerHeader>
             <DrawerFooter>
-                <Button>Submit</Button>
+                <Button>View All Receipts</Button>
                 <DrawerClose asChild>
                 <Button>Cancel</Button>
                 </DrawerClose>
