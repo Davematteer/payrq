@@ -44,10 +44,15 @@ export function DrawerUser() {
               <Link href="/auth/signup">
                 <Button className="w-full">Sign Up</Button>
               </Link>
+              <DrawerClose asChild>
+                <Button className="w-full">Cancel</Button>
+              </DrawerClose>
             </DrawerFooter>
           ) : (
             <DrawerFooter className="md:hidden">
-              <Button className="w-full" onClick={() => SignOut(router)}>Log Out</Button>
+              <Button className="w-full" onClick={() => {SignOut(router)
+                setOpen(false)
+              }}>Log Out</Button>
               <DrawerClose asChild>
                 <Button className="w-full">Cancel</Button>
               </DrawerClose>
@@ -62,7 +67,10 @@ export function DrawerUser() {
                 <Button>Sign Up</Button>
               </>
             ) : (
-              <Button onClick={() => SignOut(router)}>Log Out</Button>
+              <Button onClick={() => {
+                SignOut(router);
+                setOpen(false)
+              }}>Log Out</Button>
             )}
             <DrawerClose asChild>
               <Button>Cancel</Button>
