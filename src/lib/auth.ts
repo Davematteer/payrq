@@ -9,6 +9,5 @@ export const auth = betterAuth({
     database: pool,
     emailAndPassword:{
         enabled:true,
-        autoSignIn:true
     }
 })
