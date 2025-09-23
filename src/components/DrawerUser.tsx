@@ -31,8 +31,8 @@ export function DrawerUser() {
       <Drawer open={isOpen} onOpenChange={setOpen}>
         <DrawerContent>
           <DrawerHeader>
-            <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-            <DrawerDescription>This action cannot be undone.</DrawerDescription>
+            <DrawerTitle>Welcome {user?.user.name}!</DrawerTitle>
+            <DrawerDescription>{user ? `Here's your account ${user.user.name}`: "Login to see account details"}</DrawerDescription>
           </DrawerHeader>
 
           {/* mobile */}
