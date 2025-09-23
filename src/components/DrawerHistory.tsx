@@ -9,9 +9,9 @@ import {
     DrawerTitle,
   } from "@/components/ui/drawer"
 import { useState } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+
 import { Button } from "./ui/button";
-import { History } from "lucide-react"
+
 import { ShoppingCart } from 'lucide-react';
 
 export function DrawerHistory(){
@@ -25,7 +25,7 @@ export function DrawerHistory(){
             <DrawerContent>
                 <DrawerHeader>
                     <DrawerTitle><p className="font-light text-2xl">Receipt History</p></DrawerTitle>
-                    <DrawerDescription>Here's your past transaction receipts.</DrawerDescription>
+                    <DrawerDescription>Here&apos;s your past transaction receipts.</DrawerDescription>
                 </DrawerHeader>
             <DrawerFooter>
                 <Button>View All Receipts</Button>
