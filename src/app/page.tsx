@@ -5,6 +5,7 @@ import { useState } from "react";
 import { DrawerUser } from "@/components/DrawerUser";
 import { DrawerHistory } from "@/components/DrawerHistory";
 import { QRScanner } from "@/components/QRScanner";
+import { LandingPage } from "@/components/LandingPage";
 
 export default function Home() {
   const [scannerOpen, setScannerOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Home() {
   
   return (
     <main className="min-h-screen ">
-      {scannerOpen && <QRScanner />}
+      {scannerOpen ? <QRScanner/> : <LandingPage />}
       <footer className="fixed bottom-0  w-full bg-white">
       <div className="flex flex-row justify-between md:justify-center md:gap-60 p-4 mx-4 ">
         <DrawerUser />       
