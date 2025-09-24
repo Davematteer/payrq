@@ -12,7 +12,7 @@ import { useState } from "react";
 
 import { Button } from "./ui/button";
 
-import { ShoppingCart } from 'lucide-react';
+import { ArrowBigDownDash, Receipt, ReceiptIcon, ShoppingCart } from 'lucide-react';
 
 export function DrawerHistory(){
     const [isOpen, setOpen] = useState(false);
@@ -24,13 +24,13 @@ export function DrawerHistory(){
         <Drawer open={isOpen} onOpenChange={setOpen}>
             <DrawerContent>
                 <DrawerHeader>
-                    <DrawerTitle><p className="font-light text-2xl">Receipt History</p></DrawerTitle>
+                    <DrawerTitle ><p className="font-light text-2xl">Receipt History</p></DrawerTitle>
                     <DrawerDescription>Here&apos;s your past transaction receipts.</DrawerDescription>
                 </DrawerHeader>
             <DrawerFooter>
-                <Button>View All Receipts</Button>
+                <Button className="flex justify-center items-center gap-2">View All Receipts <Receipt /></Button>
                 <DrawerClose asChild>
-                <Button>Cancel</Button>
+                <Button className="flex justify-center items-center gap-2">Cancel <ArrowBigDownDash /></Button>
                 </DrawerClose>
             </DrawerFooter>
             </DrawerContent>

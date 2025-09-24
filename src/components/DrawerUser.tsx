@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
-import { User } from "lucide-react";
+import { ArrowBigDownDash, LogIn, LogOut, User } from "lucide-react";
 import { SignOut, UserSession } from "@/lib/authMethods";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -45,22 +45,23 @@ export function DrawerUser() {
           {!user ? (
             <DrawerFooter className="md:hidden">
               <Link  href="/auth/login">
-                <Button className="w-full">Log in</Button>
+                <Button className="w-full flex justify-center items-center gap-2">Log in <LogIn /></Button>
               </Link>
               <Link href="/auth/signup">
                 <Button className="w-full">Sign Up</Button>
               </Link>
               <DrawerClose asChild>
-                <Button className="w-full">Cancel</Button>
+              <Button className="flex justify-center items-center gap-2 w-full">Cancel <ArrowBigDownDash /></Button>
               </DrawerClose>
             </DrawerFooter>
           ) : (
             <DrawerFooter className="md:hidden">
-              <Button className="w-full" onClick={() => {SignOut(router)
+              <Button className="w-full flex justify-center items-center gap-2" onClick={() => {SignOut(router)
                 setOpen(false)
-              }}>Log Out</Button>
+              }}>Log Out <LogOut /></Button>
               <DrawerClose asChild>
-                <Button className="w-full">Cancel</Button>
+              <Button className="flex justify-center items-center gap-2 w-full">Cancel <ArrowBigDownDash /></Button>
+
               </DrawerClose>
             </DrawerFooter>
           )}

@@ -11,7 +11,7 @@ import {
 
 
 import { Button } from "./ui/button";
-import { CheckCheck, ShoppingCart } from "lucide-react";
+import { ArrowBigDownDash, CheckCheck, ShoppingCart } from "lucide-react";
 
 
 
@@ -24,11 +24,13 @@ export function PaymentDrawer({isOpen, setOpen}:{isOpen:boolean, setOpen: (v:boo
                 <DrawerHeader>
                     <DrawerTitle className="flex justify-center items-center gap-2 text-2xl font-extralight"><ShoppingCart /> </DrawerTitle>
                     <DrawerDescription>Confirm Payment!</DrawerDescription>
+                    <DrawerDescription>Total: </DrawerDescription>
+
                 </DrawerHeader>
             <DrawerFooter>
                 <Button className="flex justify-center items-center gap-2 ">Check Out <CheckCheck /></Button>
                 <DrawerClose asChild>
-                <Button>Cancel</Button>
+                <Button className="flex justify-center items-center gap-2">Cancel <ArrowBigDownDash /></Button>
                 </DrawerClose>
             </DrawerFooter>
             </DrawerContent>
