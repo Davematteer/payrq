@@ -67,7 +67,7 @@ export const QRScanner = () => {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
           >
-            <PaymentDrawer isOpen={isOpen} setOpen={setOpen} />
+            <PaymentDrawer isOpen={isOpen} setOpen={setOpen} total={100} />
           </motion.div>
         )}
       </AnimatePresence>

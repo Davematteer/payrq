@@ -15,7 +15,7 @@ import { ArrowBigDownDash, CheckCheck, ShoppingCart } from "lucide-react";
 
 
 
-export function PaymentDrawer({isOpen, setOpen}:{isOpen:boolean, setOpen: (v:boolean) => void}){
+export function PaymentDrawer({isOpen, setOpen, total}:{isOpen:boolean, setOpen: (v:boolean) => void, total:number}){
     
     return (
         <>
@@ -24,7 +24,7 @@ export function PaymentDrawer({isOpen, setOpen}:{isOpen:boolean, setOpen: (v:boo
                 <DrawerHeader>
                     <DrawerTitle className="flex justify-center items-center gap-2 text-2xl font-extralight"><ShoppingCart /> </DrawerTitle>
                     <DrawerDescription>Confirm Payment!</DrawerDescription>
-                    <DrawerDescription>Total: </DrawerDescription>
+                    <DrawerDescription>Total: GHc{total}</DrawerDescription>
 
                 </DrawerHeader>
             <DrawerFooter>
