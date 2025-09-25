@@ -12,11 +12,14 @@ import {
 
 import { Button } from "./ui/button";
 import { ArrowBigDownDash, CheckCheck, ShoppingCart } from "lucide-react";
+import { PaymentPopUp } from "./PaymentPopup";
+import { UserSession } from "@/lib/authMethods";
 
 
 
 export function PaymentDrawer({isOpen, setOpen, total}:{isOpen:boolean, setOpen: (v:boolean) => void, total:number}){
-    
+    const user = UserSession();
+
     return (
         <>
         <Drawer open={isOpen} onOpenChange={setOpen} >
@@ -28,7 +31,7 @@ export function PaymentDrawer({isOpen, setOpen, total}:{isOpen:boolean, setOpen:
 
                 </DrawerHeader>
             <DrawerFooter>
-                <Button className="flex justify-center items-center gap-2 ">Check Out <CheckCheck /></Button>
+                <PaymentPopUp amount={total} email={user?.user.email ?? undefined}/>
                 <DrawerClose asChild>
                 <Button className="flex justify-center items-center gap-2">Cancel <ArrowBigDownDash /></Button>
                 </DrawerClose>
