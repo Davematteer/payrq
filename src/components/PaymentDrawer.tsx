@@ -31,7 +31,9 @@ export function PaymentDrawer({isOpen, setOpen, total}:{isOpen:boolean, setOpen:
 
                 </DrawerHeader>
             <DrawerFooter>
+                <DrawerClose asChild>
                 <PaymentPopUp amount={total} email={user?.user.email ?? undefined}/>
+                </DrawerClose>
                 <DrawerClose asChild>
                 <Button className="flex justify-center items-center gap-2">Cancel <ArrowBigDownDash /></Button>
                 </DrawerClose>
