@@ -12,10 +12,20 @@ export function PaymentPopUp({
   email: string | undefined;
   amount: number;
 }) {
-  const popup = new Paystack();
+    const [Paystack, setPaystack] = useState<any>(null);
   const [accessCode, setAccessCode] = useState("");
   const router = useRouter();
   amount *= 100
+
+
+  // Load Paystack only in the browser
+  useEffect(() => {
+    (async () => {
+      const mod = await import("@paystack/inline-js");
+      setPaystack(() => mod.default);
+    })();
+  }, []);
+
 
   useEffect(() => {
     if (!email) return 
@@ -46,11 +56,11 @@ export function PaymentPopUp({
         router.push("/auth/login")
       }    
 
-    if (!accessCode) {
-      console.error("No access code yet");
-      return;
-    }
-
+      if (!Paystack || !accessCode) {
+        console.error("Paystack not ready or no access code");
+        return;
+      }
+    const popup = new Paystack();
     popup.resumeTransaction(accessCode);
   };
 
