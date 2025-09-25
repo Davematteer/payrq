@@ -35,7 +35,7 @@ export const QRScanner = () => {
       {/* Scanner video */}
       <motion.video
         ref={ref}
-        className="rounded-3xl shadow-xl border border-gray-200"
+        className="rounded-xl shadow-xl border border-gray-200 translate-y-15"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
