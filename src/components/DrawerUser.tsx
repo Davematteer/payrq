@@ -48,7 +48,7 @@ export function DrawerUser() {
                 <Button className="w-full flex justify-center items-center gap-2">Log in <LogIn /></Button>
               </Link>
               <Link href="/auth/signup">
-                <Button className="w-full">Sign Up</Button>
+                <Button className="w-full flex justify-center items-center gap-2">Sign Up <LogIn /> </Button>
               </Link>
               <DrawerClose asChild>
               <Button className="flex justify-center items-center gap-2 w-full">Cancel <ArrowBigDownDash /></Button>
