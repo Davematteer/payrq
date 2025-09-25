@@ -67,11 +67,16 @@ export function PaymentPopUp({
   return (
     <Button
     onClick={handleCheckout}
- // disable until ready
+    disabled={!!email && (!Paystack || !accessCode)} 
     className="flex justify-center items-center gap-2"
   >
-    Check Out <CheckCheck />
+    {!email
+      ? "Sign in to Checkout"
+      : !Paystack || !accessCode
+        ? "Loading..."
+        : "Check Out"} <CheckCheck />
   </Button>
+  
   
   );
 }
