@@ -67,10 +67,10 @@ export function PaymentPopUp({
   return (
     <Button
     onClick={handleCheckout}
-    disabled={!accessCode} // disable until ready
+ // disable until ready
     className="flex justify-center items-center gap-2"
   >
-    {accessCode ? "Check Out" : "Loading..."} <CheckCheck />
+    Check Out <CheckCheck />
   </Button>
   
   );
