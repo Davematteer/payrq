@@ -3,7 +3,7 @@ import { CheckCheck } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import type PaystackType from "@paystack/inline-js"
+import PaystackInline from "@paystack/inline-js";
 
 export function PaymentPopUp({
   email,
@@ -12,7 +12,7 @@ export function PaymentPopUp({
   email: string | undefined;
   amount: number;
 }) {
-    const [Paystack, setPaystack] = useState<typeof PaystackType | null>(null);
+    const [Paystack, setPaystack] = useState<typeof PaystackInline | null>(null);
   const [accessCode, setAccessCode] = useState("");
   const router = useRouter();
   amount *= 100
