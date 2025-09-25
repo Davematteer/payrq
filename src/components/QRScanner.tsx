@@ -33,13 +33,16 @@ export const QRScanner = () => {
   return (
     <div className="flex flex-col items-center justify-center p-6 m-2">
       {/* Scanner video */}
-      <motion.video
-        ref={ref}
-        className="rounded-xl shadow-xl border border-gray-200 translate-y-15 object-cover"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-      />
+      <div className="overflow-hidden rounded-xl">
+  <motion.video
+    ref={ref}
+    className="rounded-xl shadow-xl border border-gray-200 translate-y-15 object-cover"    style={{ transform: "scale(1.2)" }} // zoom in 20%
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.6 }}
+  />
+</div>
+
 
       {/* Scanned text */}
       <AnimatePresence>
